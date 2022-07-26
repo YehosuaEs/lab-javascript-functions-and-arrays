@@ -131,23 +131,27 @@ const wordsUnique = [
 ];
 
 function uniquifyArray(arr) {
-  let newArray = []
-  if (arr == false) {
-    return null
-  } // else {
+  let newArray = [...new Set(arr)]
+  return arr == false ? null : newArray;
+  /* ------ other option with long code ------ */
+  // let newArray = []
+  // if (arr == false) {
+  //   return null
+  // }
+  // // else {
+  // // for (let i = 0; i < arr.length; i++) {
+  // //   if (newArray.indexOf(arr[i]) === -1) {
+  // //     newArray.push(arr[i])
+  // //   }
+  // // }
+  // //   return newArray
+  // // }
   // for (let i = 0; i < arr.length; i++) {
-  //   if (newArray.indexOf(arr[i]) === -1) {
+  //   if (!newArray.includes(arr[i])) {
   //     newArray.push(arr[i])
   //   }
   // }
-  //   return newArray
-  // }
-  for (let i = 0; i < arr.length; i++) {
-    if (!newArray.includes(arr[i])) {
-      newArray.push(arr[i])
-    }
-  }
-  return newArray
+  // return newArray
 }
 
 // Iteration #6: Find elements
