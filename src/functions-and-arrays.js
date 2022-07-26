@@ -51,7 +51,7 @@ function sum(arr) {
     } else if (typeof arr[i] == "boolean") {
       resultSum += Number(arr[i]);
     } else {
-      throw Error("Unsupported data type sir or ma'am");
+      throw new Error("Unsupported data type sir or ma'am");
     }
   }
   return resultSum;
@@ -73,8 +73,6 @@ function averageNumbers(arrayOfNums) {
     let resultAve = sum / arrayOfNums.length
     return resultAve
   }
-
-
 }
 
 // Level 2: Array of strings
@@ -154,11 +152,14 @@ function uniquifyArray(arr) {
 
 // Iteration #6: Find elements
 function doesWordExist(arr, word) {
-  if (arr == false) {
-    return null
-  }
-  // i dont use if else statement because  the include method is true or false 
-  return arr.includes(word)
+  /* ----- Using ternary operator ------ */
+  return arr == false ? null : arr.includes(word)
+  /* ----- Using if else statement ------ */
+  // if (arr == false) {
+  //   return null
+  // }
+  // // i dont use if else statement because  the include method is true or false 
+  // return arr.includes(word)
 }
 
 // Iteration #7: Count repetition
@@ -178,6 +179,7 @@ const wordsCount = [
 
 function howManyTimes(arr, word) {
   let repeatWord = 0
+
   if (arr == false) {
     return repeatWord
   }
